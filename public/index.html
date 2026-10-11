@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Daily Riddle</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header><div class="brand">✦ Daily Riddle <small>One riddle. Two attempts.</small></div><nav><a href="/">Play</a><a href="/admin.html">Admin</a></nav></header>
+  <main class="layout player-layout">
+    <section class="card challenge">
+      <div id="startPanel">
+        <div class="eyebrow">WELCOME</div>
+        <h1>Select your name</h1>
+        <p class="muted">Choose your name below to begin. You have <strong>2 attempts</strong> to solve today's riddle.</p>
+        <label for="name">Your name</label>
+        <select id="name"><option value="">Loading players…</option></select>
+        <button id="start">Start →</button>
+      </div>
+      <div id="playPanel" hidden>
+        <div class="eyebrow" id="day">TODAY'S RIDDLE</div>
+        <h1>Today's Riddle</h1>
+        <div class="riddle" id="question" hidden></div>
+        <div id="answerPanel" hidden>
+          <label for="answer">Your answer</label>
+          <input id="answer" maxlength="500" placeholder="Enter your answer">
+          <div class="metrics"><span>Attempts remaining: <b id="tries">2</b></span></div>
+          <button id="submit">Submit answer →</button>
+        </div>
+        <div id="result" class="result" hidden></div>
+      </div>
+      <p id="message" role="status"></p>
+    </section>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>
