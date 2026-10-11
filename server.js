@@ -12,7 +12,7 @@ CREATE TABLE IF NOT EXISTS activity(id INTEGER PRIMARY KEY AUTOINCREMENT,attempt
 CREATE INDEX IF NOT EXISTS activity_attempt ON activity(attempt_id,id);
 CREATE INDEX IF NOT EXISTS answers_attempt ON answers_log(attempt_id,id);
 CREATE UNIQUE INDEX IF NOT EXISTS attempts_unique_player_day ON attempts(day,name COLLATE NOCASE);`);
-const norm=s=>String(s).normalize('NFKC').toLowerCase().trim().replace(/[^\p{L}\p{N}\s]/gu,'').replace(/\s+/g,' ');
+const norm=s=>String(s).normalize('NFKC').toLowerCase().replace(/[^\p{L}\p{N}]/gu,'');
 const hash=s=>crypto.createHash('sha256').update(s).digest('hex');
 const mac=s=>crypto.createHmac('sha256',SECRET).update(s).digest('hex');
 const eq=(a,b)=>{const x=Buffer.from(String(a)),y=Buffer.from(String(b));return x.length===y.length&&crypto.timingSafeEqual(x,y)};
