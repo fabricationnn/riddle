@@ -17,6 +17,7 @@
         <label for="name">Your name</label>
         <select id="name"><option value="">Loading players…</option></select>
         <button id="start">Start →</button>
+        <p class="notice">Activity notice: During the riddle, this website records tab departures and returns, first typing activity, detected copying of riddle text, and answer submissions with timestamps. Only the administrator can view individual activity. Tab tracking is approximate.</p>
       </div>
       <div id="playPanel" hidden>
         <div class="eyebrow" id="day">TODAY'S RIDDLE</div>
@@ -25,7 +26,7 @@
         <div id="answerPanel" hidden>
           <label for="answer">Your answer</label>
           <input id="answer" maxlength="500" placeholder="Enter your answer">
-          <div class="metrics"><span>Attempts remaining: <b id="tries">2</b></span></div>
+          <div class="metrics"><span>Attempts remaining: <b id="tries">2</b></span><span>Time: <b id="time">0s</b></span><span>Tab switches: <b id="switches">0</b></span><span>Time away: <b id="away">0s</b></span></div>
           <button id="submit">Submit answer →</button>
         </div>
         <div id="result" class="result" hidden></div>
@@ -33,6 +34,7 @@
       <p id="message" role="status"></p>
     </section>
   </main>
+  <footer>Daily Riddle · Individual answers and activity are private to the administrator.</footer>
   <script src="/app.js"></script>
 </body>
 </html>
